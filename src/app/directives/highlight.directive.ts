@@ -5,7 +5,7 @@ import { PandemicData } from '../app.component';
   selector: '[appHighlight]'
 })
 export class HighlightDirective {
-  @Input('appHighlight') set pandemicData(pandemicData: PandemicData) {
+  @Input() set pandemicData(pandemicData: PandemicData) {
     if (pandemicData.newPositiveTestsPercent > 2.5) {
       this.element.nativeElement.style.color = 'red';
     }
@@ -24,7 +24,7 @@ export class HighlightDirective {
       this.element.nativeElement.style.backgroundColor = 'lightblue' :
       this.element.nativeElement.style.backgroundColor = 'white';
   }
-  constructor(private element: ElementRef<HTMLElement>) { 
+  constructor(private element: ElementRef<HTMLElement>) {
   }
 
 }

@@ -1,5 +1,5 @@
 <h1>5. heti házi</h1>
 Nyomd meg az "alt + i"  -t
-<p *ngFor="let pandemicData of pandemicHistory" [appHighlight]="pandemicData" [iWantTheTruth]="iWantTheTruth">
+<p *ngFor="let pandemicData of pandemicHistory" appHighlight [pandemicData]="pandemicData" [iWantTheTruth]="iWantTheTruth">
  {{pandemicData.date | date : 'y. MMM. d.'}} {{pandemicData | displayPandemicData : iWantTheTruth}}
 </p>
