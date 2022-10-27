@@ -41,9 +41,12 @@ export class AppComponent {
     this._iWantTheTruth = iWantTheTruth;
   }
 
-  @HostListener('window:keydown.Alt.i', ['$event'])
+  @HostListener('window:keydown', ['$event'])
   onKeyDown(event: KeyboardEvent) {
-    this._iWantTheTruth = true;
+    if(event.code === 'KeyI' && event.altKey) {
+
+      this._iWantTheTruth = true;
+    }
   }
   @HostListener('window:keyup.Alt.i', ['$event'])
   onKeyUp(event: KeyboardEvent) {
